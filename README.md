@@ -9,8 +9,8 @@
 • WON, 3 Times in a row during various State and National level Project Exhibitions 2005-2009.
 
 # LICENSE
-Copyright (C) 2005 - 2019 Venisoft.com - All Rights Reserved. 
+**Copyright (C) 2005 - 2019 venisoft.com - All Rights Reserved.** 
 
 You may use, and modify this code under the terms of the venisoft.com license.
 
-You should have received a copy of the venisoft.com license with this file. If not, please write to: venisoft@gmail.com, or visit: www.venisoft.com
+You should have received a copy of the venisoft.com license with this file. If not, please write to: **venisoft@gmail.com**, or visit: **www.venisoft.com**
