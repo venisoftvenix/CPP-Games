@@ -1,6 +1,6 @@
 # CPP-Games
 
-## 2D games developed in CPP Language
+## 2D Games developed in CPP Language
 
 • These games are developed during graduation between 2005 and 2009.
 
