@@ -2,8 +2,8 @@
 
 ## 2D Games developed in CPP Language
 
-• These games are developed during graduation between 2005 and 2009.
+• Developed during 2005 and 2009.
 
-• These games are developed using CPP Programing language with EGAVGA.BGI Graphics.
+• Developed using CPP Programing language with EGAVGA.BGI Graphics technlogy.
 
-• These games WON, FIRST, 3 times in a row during various State and National level Project Exhibitions.
+• WON, 3 Times in a row during various State and National level Project Exhibitions 2005-2009.
