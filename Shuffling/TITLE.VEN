@@ -1,0 +1,51 @@
+void title(char name[])
+{
+   setcolor(WHITE);
+   rectangle(0,0,639,478); //Border
+   setfillstyle(1,BLUE);
+   bar(0,0,639,20);        //Title Bar
+   rectangle(0,0,639,20);
+   settextstyle(2,0,6);
+   moveto(0,0);
+   outtext(name);
+   setcolor(WHITE);
+   setfillstyle(1,RED);
+   bar(617,1,638,19);
+   moveto(625,0);
+   settextstyle(2,0,6);
+   outtext("X");
+
+}
+int close(int *change)
+{
+  int b,x,y;
+  getmousestatus(&b,&x,&y);
+  if(x>=617&&y<=19)
+  {
+    if(*change==1)
+    {
+      setcolor(WHITE);
+      rectangle(618,2,637,18);
+      rectangle(617,1,638,19);
+      moveto(625,0);
+      settextstyle(2,0,6);
+      outtext("X");
+      *change=0;
+    }
+    if(b==1) return 1;
+    if(b==2) return 2;
+  }
+  else if(*change==0)
+  {
+    setcolor(BLACK);
+    setfillstyle(1,BLACK);
+    rectangle(618,2,637,18);
+    rectangle(617,1,638,19);
+    setcolor(BLUE);
+    moveto(625,0);
+    settextstyle(2,0,6);
+    outtext("X");
+    *change=1;
+  }
+  return 0;
+}
