@@ -1,0 +1,77 @@
+void initmouse()             //initialize mouse
+{
+    union REGS i,o;
+    i.x.ax=0;
+    int86(51,&i,&o);
+}
+void restrictmouse(int x1,int y1,int x2,int y2)   //restrictions
+{
+    union REGS i,o;
+    i.x.ax=7;
+    i.x.cx=x1;
+    i.x.dx=x2;
+    int86(51,&i,&o);
+    i.x.ax=8;
+    i.x.cx=y1;
+    i.x.dx=y2;
+    int86(51,&i,&o);
+}
+void showmouseptr()                       //prints pointer
+{
+    union REGS i,o;
+    i.x.ax=1;
+    int86(51,&i,&o);
+}
+void getmousestatus(int *b,int *x,int *y)    //b=1 left
+{                                            //b=2 right
+    union REGS i,o;                          //x,y coordinates
+    i.x.ax=3;
+    int86(51,&i,&o);
+    *b=o.x.bx;
+    *x=o.x.cx;
+    *y=o.x.dx;
+}
+void hidemouseptr()        //hides pointer
+{
+    union REGS i,o;
+    i.x.ax=2;
+    int86(51,&i,&o);
+}
+int getkey()
+{
+    union REGS i,o;
+    while(!kbhit());
+	i.h.ah=0;
+    int86(22,&i,&o);
+    return(o.h.ah);
+}
+void changecursor(int *shape)
+{
+    union REGS i,o;
+
+    struct SREGS s;
+    i.x.ax=9;
+    i.x.bx=0;
+    i.x.cx=0;
+    i.x.dx=(unsigned) shape;
+    segread(&s);
+    s.es=s.ds;
+    int86x(0x33,&i,&o,&s);
+}
+void hidemoseptr()         //Prints pointer but it can not able to move
+{
+    union REGS i,o;
+    i.x.ax=0;
+    int86(0x33,&i,&o);
+}
+void graph()
+{
+   int gdriver=DETECT,gmode,errorcode;
+   initgraph(&gdriver,&gmode,"");
+   errorcode=graphresult();
+   if(errorcode!=grOk)
+   {
+     printf("Graphics error: %s\n", grapherrormsg(errorcode));
+     printf("Press any key to halt:");getch();exit(1);
+   }
+}
